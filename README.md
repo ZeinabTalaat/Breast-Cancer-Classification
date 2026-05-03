@@ -1,20 +1,16 @@
-🧠 Breast Cancer Classification using Artificial Neural Network (ANN)
-
-
-
-
+🧠 Breast Cancer Classification using ANN
 📌 Overview
 
-This project builds an Artificial Neural Network (ANN) model to classify breast cancer tumors into:
+This project uses an Artificial Neural Network (ANN) to classify breast cancer tumors into:
 
 🟢 Benign (Non-cancerous)
 🔴 Malignant (Cancerous)
 
-The goal is to support early detection using machine learning techniques.
+The goal is early and accurate cancer detection using machine learning.
 
-📊 Dataset Information
+📊 Dataset
 
-The dataset contains medical features extracted from breast mass images:
+The dataset contains medical features such as:
 
 Radius
 Texture
@@ -24,81 +20,87 @@ Smoothness
 Compactness
 Concavity
 Symmetry
-🎯 Target Variable:
+
+
+🎯 Target:
 M → Malignant (1)
 B → Benign (0)
-⚙️ Project Pipeline
-1️⃣ Data Loading
+
+
+
+⚙️ Workflow
+1. Load Data
 data = pd.read_csv("breast-cancer.csv")
 
-2️⃣ Data Preprocessing
-Removed unnecessary columns (e.g., id)
-Encoded target variable:
+2. Data Cleaning
+Remove unnecessary columns
+Encode target variable:
 data['diagnosis'] = data['diagnosis'].map({'M':1, 'B':0})
 
-3️⃣ Data Visualization
+3. Visualization
 
-Understanding feature relationships using correlation heatmap:
+Correlation heatmap:
 
 sns.heatmap(data.corr(), annot=True)
 
-4️⃣ Feature Engineering
+4. Features & Target
 X = data.drop('diagnosis', axis=1)
 y = data['diagnosis']
 
-5️⃣ Train-Test Split
+5. Train-Test Split
 80% Training
 20% Testing
-6️⃣ Feature Scaling
+6. Feature Scaling
 
-Applied StandardScaler for better ANN performance.
+Used StandardScaler for normalization.
 
-🧠 Model Architecture (ANN)
+
+
+
+
+
+🧠 Model (ANN)
 model = Sequential()
 
 model.add(Dense(16, activation='relu'))
 model.add(Dense(8, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
 
-🧩 Layers:
-Input Layer: 16 neurons
-Hidden Layer: 8 neurons
-Output Layer: 1 neuron (Sigmoid)
-🏋️ Training Configuration
+Layers:
+Input → 16 neurons
+Hidden → 8 neurons
+Output → Sigmoid
+
+
+
+
+🏋️ Training
 Optimizer: Adam
-Loss Function: Binary Crossentropy
+Loss: Binary Crossentropy
 Epochs: 50
 Batch Size: 16
-📈 Evaluation Metrics
 
-The model is evaluated using:
 
-Accuracy Score
+
+
+
+
+📊 Evaluation
+Accuracy
 Confusion Matrix
 Classification Report
 ROC Curve
-📊 Results Visualization
 
-Training vs Validation accuracy/loss graphs were used to analyze model performance and detect overfitting.
 
-🎯 Objective
 
-To build a reliable AI model capable of assisting in early breast cancer detection by classifying tumors accurately.
+
+🎯 Goal
+
+Build a model that helps in early detection of breast cancer with high accuracy.
+
+
+
 
 🛠 Tech Stack
-Python 🐍
-Pandas
-NumPy
-Matplotlib 📊
-Seaborn 🌊
-Scikit-learn 🤖
-TensorFlow / Keras 🧠
-🚀 Future Improvements
-Hyperparameter tuning
-Cross-validation
-Feature selection optimization
-Deployment as a web app (Flask / Streamlit)
 
-⭐ If you like this project
-
-Give it a ⭐ on GitHub — it motivates me to build more AI projects!
+Python | Pandas | NumPy | Matplotlib | Seaborn | Scikit-learn | TensorFlow
