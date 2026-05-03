@@ -98,13 +98,6 @@ Hyperparameter tuning
 Cross-validation
 Feature selection optimization
 Deployment as a web app (Flask / Streamlit)
-📌 Project Preview
-
-💡 How to Run
-git clone https://github.com/your-username/breast-cancer-classification.git
-cd breast-cancer-classification
-pip install -r requirements.txt
-python app.py
 
 ⭐ If you like this project
 
